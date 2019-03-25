@@ -1,4 +1,6 @@
 .App-title {
-    background-color: brown;
-    padding-left: 50%;
+    text-align: center; 
+    background-color: lightgray; 
+    padding: 1em; 
+    font-family: futura; 
 }
