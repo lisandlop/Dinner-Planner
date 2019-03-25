@@ -18,7 +18,7 @@ class Overview extends Component {
             <div className="Overview col-md-12">
                 <p>Image and cost of dish</p>
                 <p>Image and cost of dish</p>
-                <p>Total cost</p>
+                <p>Total cost: </p>
                 <Link to="/printout">
                     <button hover id="printButton">Print full recipe</button>
                 </Link>
