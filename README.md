@@ -42,3 +42,15 @@ Check the components and see how they work. There are additional comments in the
 
 * Michel Tabari for fine tunning the code
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+## Structure
+
+### Welcome page
+
+### Dish search page
+
+### Dish details page
+
+### Dish confirm page
+
+### Dish printout page

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
+import { Link } from "react-router-dom";
+
 
 import "./Sidebar.css";
 
@@ -43,41 +45,48 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <div className="Sidebar">
-        <Row>
-          <h3>My Dinner</h3>
-        </Row>
-        <Row>
-          <p>
-            People:
-            <input
-              type="number"
-              value={this.state.numberOfGuests}
-              onChange={this.onNumberOfGuestsChanged}
-            />
-            <br />
-          </p>
-        </Row>
-        <Row>
-          <p>
-            Total number of guests: {this.state.numberOfGuests}
-          </p>
-        </Row>
-        <Table striped>
-          <thead>
-            <tr>
-              <th>Dish</th>
-              <th>Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Selected dish</td>
-              <td>Dish cost</td>
-            </tr>
-          </tbody>
-        </Table>
+      <div className="Sidebar col-md-4">
 
+        <Col id="SidebarColumn">
+          <Row>
+            <h3>My Dinner</h3>
+          </Row>
+          <Row>
+            <p>
+              People:
+              <input
+                type="number"
+                value={this.state.numberOfGuests}
+                onChange={this.onNumberOfGuestsChanged}
+              />
+              <br />
+            </p>
+          </Row>
+          <Row>
+            <p>
+              Total number of guests: {this.state.numberOfGuests}
+            </p>
+          </Row>
+          <Table striped>
+            <thead>
+              <tr>
+                <th>Dish</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Selected dish</td>
+                <td>Dish cost</td>
+              </tr>
+            </tbody>
+          </Table>
+          <Row>
+            <Link to="/details">
+              <button hover id="confirmButton">Confirm dinner</button>
+            </Link>
+          </Row>
+        </Col>
 
       </div>
     );

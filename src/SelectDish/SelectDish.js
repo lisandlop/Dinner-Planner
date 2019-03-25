@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Col from 'react-bootstrap/Col';
+// import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Sidebar from "../Sidebar/Sidebar";
 import Dishes from "../Dishes/Dishes";
@@ -13,13 +13,9 @@ class SelectDish extends Component {
 
         {/* We pass the model as property to the Sidebar component */}
         <Row>
-          <Col sx={3}>
-            <Sidebar model={this.props.model} />
-          </Col>
+          <Sidebar model={this.props.model} />
           {/* Kanske göra en component för search-bar osv?*/}
-          <Col sx={9}>
-            <Dishes />
-          </Col>
+          <Dishes />
         </Row>
 
       </div>

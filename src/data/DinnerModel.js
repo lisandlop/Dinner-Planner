@@ -25,8 +25,10 @@ class DinnerModel extends ObservableModel {
    * @param {number} num
    */
   setNumberOfGuests(num) {
-    this._numberOfGuests = num;
-    this.notifyObservers();
+    if (num >= 1) {
+      this._numberOfGuests = num;
+      this.notifyObservers('numberOfGuests');
+    }
   }
 
   // API methods

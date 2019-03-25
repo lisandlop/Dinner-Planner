@@ -1,5 +1,17 @@
 .Sidebar {
     padding: 1em; 
     padding-left: 2em; 
-    border: 1px solid black; 
+    border-top: 1px solid black; 
+    border-right: 1px solid black; 
+    border-bottom: 1px solid black; 
 }
+
+    #SidebarColumn {
+        padding-left: 2em; 
+    }
+
+    #confirmButton {
+        align-content: center; 
+        background-color: orange; 
+        padding: 0.5em; 
+    }
