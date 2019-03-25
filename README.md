@@ -62,7 +62,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Dinner overview page
 * ... .js as ...
 * --> ConfirmHeader.js as header
-* --> Confirm.js as dish list to confirm
+* --> Overview.js as dish list to confirm
 
 ### Dinner printout page
 * ... .js as ...
