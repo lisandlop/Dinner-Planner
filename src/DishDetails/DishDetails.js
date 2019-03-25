@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import Details from "../Details/Details";
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+// import Col from 'react-bootstrap/Col';
 
 import "./DishDetails.css";
 

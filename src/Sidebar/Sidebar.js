@@ -82,7 +82,7 @@ class Sidebar extends Component {
             </tbody>
           </Table>
           <Row>
-            <Link to="/details">
+            <Link to="/overview">
               <button hover id="confirmButton">Confirm dinner</button>
             </Link>
           </Row>
