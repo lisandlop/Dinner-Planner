@@ -1,6 +1,6 @@
 import ObservableModel from "./ObservableModel";
 
-const BASE_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com";
+const BASE_URL = "http://sunset.nada.kth.se:8080/iprog/group/3"; 
 const httpOptions = {
   headers: { "X-Mashape-Key": "YOUR_API_KEY" }
 };

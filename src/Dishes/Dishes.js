@@ -57,7 +57,7 @@ class Dishes extends Component {
 
     return (
       <div className="Dishes">
-        <h3>Dishes</h3>
+        <h3>Find a dish</h3>
         <ul>{dishesList}</ul>
       </div>
     );

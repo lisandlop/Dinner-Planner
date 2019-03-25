@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Table from 'react-bootstrap/Table';
+
 import "./Sidebar.css";
 
 class Sidebar extends Component {
@@ -40,17 +44,41 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="Sidebar">
-        <h3>This is the sidebar</h3>
-        <p>
-          People:
-          <input
-            type="number"
-            value={this.state.numberOfGuests}
-            onChange={this.onNumberOfGuestsChanged}
-          />
-          <br />
-          Total number of guests: {this.state.numberOfGuests}
-        </p>
+        <Row>
+          <h3>My Dinner</h3>
+        </Row>
+        <Row>
+          <p>
+            People:
+            <input
+              type="number"
+              value={this.state.numberOfGuests}
+              onChange={this.onNumberOfGuestsChanged}
+            />
+            <br />
+          </p>
+        </Row>
+        <Row>
+          <p>
+            Total number of guests: {this.state.numberOfGuests}
+          </p>
+        </Row>
+        <Table striped>
+          <thead>
+            <tr>
+              <th>Dish</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Selected dish</td>
+              <td>Dish cost</td>
+            </tr>
+          </tbody>
+        </Table>
+
+
       </div>
     );
   }
