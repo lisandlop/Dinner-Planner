@@ -2,12 +2,13 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 // import modelInstance from "../data/DinnerModel";
 import Sidebar from "../Sidebar/Sidebar";
+import Details from "../Details/Details";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import "./DishDetails.css";
 
-class Details extends Component {
+class DishDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,11 +18,10 @@ class Details extends Component {
 
     render() {
         return (
-            <div className="Details">
+            <div className="DishDetails">
                 <Row>
-                    <Col sx={3}>
-                        <Sidebar model={this.props.model} />
-                    </Col>
+                    <Sidebar model={this.props.model} />
+                    <Details model={this.props.model} />
                 </Row>
             </div>
         );
@@ -29,4 +29,4 @@ class Details extends Component {
 
 }
 
-export default Details;
+export default DishDetails;
