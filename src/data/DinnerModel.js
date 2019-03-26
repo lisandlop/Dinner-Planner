@@ -12,6 +12,7 @@ class DinnerModel extends ObservableModel {
     super();
     this._numberOfGuests = 4;
     this.getNumberOfGuests();
+    this._menu = []; 
   }
 
   /**
@@ -33,6 +34,15 @@ class DinnerModel extends ObservableModel {
     }
   }
 
+  addDishToMenu(dish) {
+    // IMPLEMENT
+  }
+
+  removeDishFromMenu() {
+    // IMPLEMENT
+  }
+
+
   // API methods
 
   /**
@@ -41,6 +51,11 @@ class DinnerModel extends ObservableModel {
    */
   getAllDishes() {
     const url = `${BASE_URL}/recipes/search`;
+    return fetch(url, httpOptions).then(this.processResponse);
+  }
+
+  getDish(id) {
+    const url = `${BASE_URL}/recipes/` + id + `/`;
     return fetch(url, httpOptions).then(this.processResponse);
   }
 

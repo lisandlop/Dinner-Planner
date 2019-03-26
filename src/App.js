@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: 'none' }}>
           <header className="App-header">
             <h1 className="App-title">{this.state.title}</h1>
           </header>

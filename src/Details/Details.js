@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import modelInstance from "../data/DinnerModel";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link } from "react-router-dom";
+
+import "./Details.css";
+
 
 class Details extends Component {
     constructor(props) {
@@ -19,6 +21,7 @@ class Details extends Component {
                 <Row>
                     <Col>
                         <h3>Dish title</h3>
+                        {/* <h3>{this.state.dish.title}</h3> */}
                         <p>Image of dish</p>
                         <Link to="/search">
                             <button id="backToSearchButton">Back to search</button>

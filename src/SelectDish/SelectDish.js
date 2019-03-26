@@ -15,7 +15,6 @@ class SelectDish extends Component {
           {/* Kanske göra en component för search-bar osv?*/}
           <Dishes />
         </Row>
-
       </div>
     );
   }

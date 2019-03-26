@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 // Alternative to passing the moderl as the component property,
 // we can import the model instance directly
 import modelInstance from "../data/DinnerModel";
@@ -42,23 +43,40 @@ class Dishes extends Component {
     // useful message to the user or show the list
     // of returned dishes
     switch (this.state.status) {
+
       case "LOADING":
         dishesList = <em>Loading...</em>;
         break;
+
       case "LOADED":
         dishesList = this.state.dishes.map(dish => (
-          <li key={dish.id}>{dish.title}</li>
+          <Link key={dish.id} to={"/details/" + dish.id} style={{ textDecoration: 'none' }}>
+            <div className="SearchDishBox">
+              <div className="SearchImage">
+                <img id="DishImage" src={"https://spoonacular.com/recipeImages/" + dish.image} />
+              </div>
+              <div className="SearchTitle">
+                {dish.title}
+              </div>
+            </div>
+          </Link>
         ));
         break;
+
       default:
         dishesList = <b>Failed to load data, please try again</b>;
         break;
     }
 
     return (
-      <div className="Dishes">
+      <div className="Dishes col-md-8">
         <h3>Find a dish</h3>
-        <ul>{dishesList}</ul>
+        <h6>Search bar</h6>
+        <h6>Filter dropdown</h6>
+        <Link to="/search">
+          <button id="searchButton">Search</button>
+        </Link>
+        <div className="DishRow">{dishesList}</div>
       </div>
     );
   }
