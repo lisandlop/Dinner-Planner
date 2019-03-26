@@ -1,0 +1,7 @@
+.Details {
+    padding-top: 1em; 
+}
+
+    #backToSearchButton, #addToMenuButton {
+        background-color: orange; 
+    }

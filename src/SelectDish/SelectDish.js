@@ -19,10 +19,12 @@ class SelectDish extends Component {
         {/*sökrutan*/}
 
         {/* We pass the model as property to the Sidebar component */}
-        <Sidebar model={this.props.model} />
-        { /*<Dishes /> */ }
-        <Dishes model={this.props.model} type={this.type} filter={this.filter}/>
 
+        <Row>
+          <Sidebar model={this.props.model} />
+          {/* Kanske göra en component för search-bar osv?*/}
+          <Dishes />
+        </Row>
       </div>
       </div> 
     );

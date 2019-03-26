@@ -23,15 +23,36 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">{this.state.title}</h1>
 
-          {/* We rended diffrent component based on the path */}
-          <Route exact path="/" component={Welcome} />
-          <Route path="/search"
-            render={() => <SelectDish model={modelInstance} />}
-          />
-        </header>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <header className="App-header">
+            <h1 className="App-title">{this.state.title}</h1>
+          </header>
+        </Link>
+
+        {/* We rended diffrent component based on the path */}
+        <Route exact path="/" component={Welcome} />
+
+        <Route
+          path="/search"
+          render={() => <SelectDish model={modelInstance} />}
+        />
+
+        <Route
+          path="/details"
+          render={() => <DishDetails model={modelInstance} />}
+        />
+
+        <Route
+          path="/overview"
+          render={() => <DinnerOverview model={modelInstance} />}
+        />
+
+        <Route
+          path="/printout"
+          render={() => <DinnerPrintout model={modelInstance} />}
+        />
+
       </div>
     );
   }
