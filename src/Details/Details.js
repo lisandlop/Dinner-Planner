@@ -21,13 +21,13 @@ class Details extends Component {
                         <h3>Dish title</h3>
                         <p>Image of dish</p>
                         <Link to="/search">
-                            <button hover id="backToSearchButton">Back to search</button>
+                            <button id="backToSearchButton">Back to search</button>
                         </Link>
                     </Col>
                     <Col>
                         <p>Ingredient box</p>
                         <Link to="/search">
-                            <button hover id="addToMenuButton">Add dish to menu</button>
+                            <button id="addToMenuButton">Add dish to menu</button>
                         </Link>
                     </Col>
                 </Row>
