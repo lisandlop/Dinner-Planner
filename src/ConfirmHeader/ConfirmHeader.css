@@ -1,0 +1,14 @@
+.Header {
+    padding: 1em; 
+    padding-left: 5em; 
+    border-bottom: 3px solid black; 
+}
+
+    #helloHeader {
+        padding-left: 1em; 
+    }
+
+    #backEditDinnerButton {
+        align-content: right; 
+        background-color: orange; 
+    }

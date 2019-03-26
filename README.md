@@ -1,5 +1,6 @@
 # Dinner Planner React
-## heeeeeej
+
+## Lab instructions!
 ## How to get started
 
 Since modern frameworks use some advanced features like compiling the templates and source code in pure
@@ -42,3 +43,28 @@ Check the components and see how they work. There are additional comments in the
 
 * Michel Tabari for fine tunning the code
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+## Structure
+
+### Welcome page
+* Welcome.js
+
+### Dish search page
+* SelectDish.js as a kind of container
+* --> Sidebar.js as sidebar
+* --> Dishes.js as dish search
+
+### Dish details page
+* DishDetails.js as a kind of container 
+* --> Sidebar.js as sidebar
+* --> Details.js as dish details
+
+### Dinner overview page
+* ... .js as ...
+* --> ConfirmHeader.js as header
+* --> Overview.js as dish list to confirm
+
+### Dinner printout page
+* ... .js as ...
+* --> ConfirmHeader.js as header
+* --> Printout.js as final printed page 
