@@ -5,3 +5,6 @@
     #backToSearchButton, #addToMenuButton {
         background-color: orange; 
     }
+    .DishImage {
+        width: 100%;
+    }
