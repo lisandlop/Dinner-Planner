@@ -41,6 +41,7 @@ class Details extends Component {
         let dishImage = null; 
         let dishInstructions = null; 
         let ingredientList = null;
+        let addDish = null; 
 
         let guestNumber = this.state.numberOfGuests; 
 
@@ -61,6 +62,11 @@ class Details extends Component {
                         <td>SEK</td>
                         <td style={{textAlign: 'right'}}>{(1).toFixed(2)*guestNumber}</td>
                     </tr>);
+
+                addDish = <button id="addToMenuButton" onClick={() => 
+                    this.props.model.addDishToMenu(this.state.dish)}>
+                    Add to menu</button>
+                
 
                 break; 
         }
@@ -83,8 +89,11 @@ class Details extends Component {
                         <table className="table">
                             <tbody>{ingredientList}</tbody>
                         </table>
-                        <Link to="/search">
+                        {/* <Link to="/search">
                             <button id="addToMenuButton">Add dish to menu</button>
+                        </Link> */}
+                        <Link to="/search">
+                            {addDish}
                         </Link>
                     </Col>
                 </Row>

@@ -29,4 +29,6 @@ class DishDetails extends Component {
 
 }
 
+// button on click, importera model, blabla props, sen addDishToMenu
+
 export default DishDetails;
