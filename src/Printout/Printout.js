@@ -5,18 +5,36 @@ import Col from 'react-bootstrap/Col';
 import "./Printout.css";
 
 class Printout extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //     numberOfGuests: this.props.model.getNumberOfGuests()
-    //   };
-    // }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            numberOfGuests: this.props.model.getNumberOfGuests(), 
+            menu: this.props.model.getFullMenu(), 
+            totalPrice: this.props.model.getTotalMenuPrice()
+        };
+    }
 
     render() {
+
+        var printOutDish = this.state.menu.map((dish) =>
+            <Row key={dish.id}>
+                <Col>
+                    <h3>{dish.title}</h3>
+                    <img src={dish.image} />
+                </Col>
+                <Col>
+                    <p>{dish.instructions}</p>
+                </Col>
+            </Row>
+        );
+
+
         return (
             <div className="Printout col-md-12">
                 <Row>
-                    <Col>
+                    {printOutDish}
+                    {/* <Col>
                         <p>Image</p>
                     </Col>
                     <Col>
@@ -24,7 +42,7 @@ class Printout extends Component {
                     </Col>
                     <Col>
                         <p>Preparation</p>
-                    </Col>
+                    </Col> */}
                 </Row>
             </div>
         );

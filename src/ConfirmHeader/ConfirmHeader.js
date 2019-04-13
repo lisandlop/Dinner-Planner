@@ -6,11 +6,13 @@ import { Link } from "react-router-dom";
 import "./ConfirmHeader.css";
 
 class ConfirmHeader extends Component {
-    // constructor(props) {
-    //     super(props);
+    constructor(props) {
+        super(props);
 
-    //     this.state = numberOfGuests: this.props.model.getNumberOfGuests()
-    // };
+        this.state = {
+            numberOfGuests: this.props.model.getNumberOfGuests()
+        }
+    };
 
 
     render() {
@@ -19,12 +21,12 @@ class ConfirmHeader extends Component {
                 <Row>
                     <Col>
                         <h2 id="helloHeader">
-                            My Dinner: ? people 
+                            My Dinner: {this.state.numberOfGuests} people 
                         </h2>    
                     </Col>
                     <Col >
                         <Link to="/search">
-                            <button id="backEditDinnerButton">Go back and edit dinner</button>
+                            <button stylle={{textAlign: 'center'}}id="backEditDinnerButton">Go back and edit dinner</button>
                         </Link>
                     </Col>  
                 </Row>
