@@ -69,13 +69,15 @@ class Dishes extends Component {
         break;
     }
 
+
     return (
       <div className="Dishes col-md-8">
         <h3>Find a dish</h3>
-        
-        <form className = "searchform" onSubmit = {this.handleSubmit}>
-          <input id = "dishFilter" type = "text" className = "form-control col-sm-4" placeholder = "Search dish..."
-              defaultValue = {this.filter} onChange = {this.handleFilterChange}/>
+  
+          <form className = "searchform" onSubmit = {this.handleSubmit}>
+            <input id = "dishFilter" type = "text" className = "form-control col-sm-4" placeholder = "Search dish..."
+                defaultValue = {this.filter} onChange = {this.handleFilterChange}/>
+      
           <select id ="dishType" className = "form-control col-sm-3"
               defaultValue = {this.type} onChange = {this.handleTypeChange}>
             <option value ="all">All</option>
@@ -99,6 +101,7 @@ class Dishes extends Component {
         <hr></hr>
         <div className="DishRow">{dishesList}</div>
       </div>
+    
     );
   }
 }
