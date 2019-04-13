@@ -64,9 +64,8 @@ class Details extends Component {
                     </tr>);
 
                 addDish = <button id="addToMenuButton" onClick={() => 
-                    this.props.model.addDishToMenu(this.state.dish)}>
-                    Add to menu</button>
-                
+                    this.props.model.addDishToMenu(this.state.dish)}>Add to menu</button>
+                    console.log(this.props.model.getFullMenu())
 
                 break; 
         }

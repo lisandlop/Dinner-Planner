@@ -34,13 +34,36 @@ class DinnerModel extends ObservableModel {
     }
   }
 
-  addDishToMenu(dish) {
-    // IMPLEMENT
+  getFullMenu() {
+    return this._menu;
   }
 
-  removeDishFromMenu() {
-    // IMPLEMENT
+  addDishToMenu(dish) {
+    for (var i = 0; i < this._menu.length; i++) {
+      if (this._menu[i].id === dish.id) {
+        this.removeDishFromMenu(this._menu[i].id, true);
+      }
+    }
+    this._menu.push(dish);
+    localStorage.setItem("menu", JSON.stringify(this._menu));
+    this.notifyObservers();
   }
+
+  removeDishFromMenu(id, muted=false) {
+    var index = null;
+    for (let i = 0; i < this._menu.length; i++) {
+      if (this._menu[i].id === id) {
+        index = i;
+      }
+    }
+    if (index > -1) { this._menu.splice(index, 1); }
+    if (!muted) {
+      localStorage.setItem("selectedMenu", JSON.stringify(this._menu));
+      this.notifyObservers();
+    }
+  }
+
+  
 
 
   // API methods

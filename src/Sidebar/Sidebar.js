@@ -3,8 +3,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import { Link } from "react-router-dom";
-
-
 import "./Sidebar.css";
 
 class Sidebar extends Component {
@@ -13,7 +11,9 @@ class Sidebar extends Component {
 
     // we put on state the properties we want to use and modify in the component
     this.state = {
-      numberOfGuests: this.props.model.getNumberOfGuests()
+      numberOfGuests: this.props.model.getNumberOfGuests(),
+      menu: this.props.model.getFullMenu(), 
+      // totalPrice: this.props.model.getTotalMenuPrice()
     };
   }
 
@@ -34,7 +34,9 @@ class Sidebar extends Component {
   // cause the component to re-render
   update() {
     this.setState({
-      numberOfGuests: this.props.model.getNumberOfGuests()
+      numberOfGuests: this.props.model.getNumberOfGuests(),
+      menu: this.props.model.getFullMenu()
+      // , totalPrice: this.props.model.getTotalMenuPrice()
     });
   }
 
@@ -44,6 +46,14 @@ class Sidebar extends Component {
   };
 
   render() {
+
+    let menuList = this.state.menu.map((dish) =>
+      <tr key={dish.id}>
+        <td>{dish.title}</td>
+        <td style={{textAlign: 'right'}}>{dish.pricePerServing}</td>
+      </tr>
+    )
+
     return (
       <div className="Sidebar col-md-4">
 
@@ -71,14 +81,11 @@ class Sidebar extends Component {
             <thead>
               <tr>
                 <th>Dish</th>
-                <th>Cost</th>
+                <th style={{textAlign: 'right'}}>Cost</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Selected dish</td>
-                <td>Dish cost</td>
-              </tr>
+              {menuList}
             </tbody>
           </Table>
           <Row>
