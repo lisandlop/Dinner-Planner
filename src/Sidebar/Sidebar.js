@@ -13,7 +13,7 @@ class Sidebar extends Component {
     this.state = {
       numberOfGuests: this.props.model.getNumberOfGuests(),
       menu: this.props.model.getFullMenu(), 
-      // totalPrice: this.props.model.getTotalMenuPrice()
+      totalPrice: this.props.model.getTotalMenuPrice()
     };
   }
 
@@ -35,8 +35,8 @@ class Sidebar extends Component {
   update() {
     this.setState({
       numberOfGuests: this.props.model.getNumberOfGuests(),
-      menu: this.props.model.getFullMenu()
-      // , totalPrice: this.props.model.getTotalMenuPrice()
+      menu: this.props.model.getFullMenu(), 
+      totalPrice: this.props.model.getTotalMenuPrice()
     });
   }
 
@@ -47,12 +47,20 @@ class Sidebar extends Component {
 
   render() {
 
-    let menuList = this.state.menu.map((dish) =>
+    var menuList = this.state.menu.map((dish) =>
       <tr key={dish.id}>
         <td>{dish.title}</td>
-        <td style={{textAlign: 'right'}}>{dish.pricePerServing}</td>
+        <td style={{textAlign: 'right'}}>{(dish.pricePerServing * this.state.numberOfGuests).toFixed(2)}</td>
       </tr>
     )
+
+    var totalMenuPrice = (
+      <thead>
+          <tr>
+            <th colspan = "2" style={{textAlign: 'center'}}>Total menu price: {this.state.totalPrice === 0 ? '0 SEK' : this.state.totalPrice.toFixed(2) + 'SEK'}</th>
+          </tr>
+      </thead>
+      )
 
     return (
       <div className="Sidebar col-md-4">
@@ -61,6 +69,7 @@ class Sidebar extends Component {
           <Row>
             <h3>My Dinner</h3>
           </Row>
+
           <Row>
             <p>
               People:
@@ -72,11 +81,13 @@ class Sidebar extends Component {
               <br />
             </p>
           </Row>
+
           <Row>
             <p>
               Total number of guests: {this.state.numberOfGuests}
             </p>
           </Row>
+
           <Table striped>
             <thead>
               <tr>
@@ -87,9 +98,11 @@ class Sidebar extends Component {
             <tbody>
               {menuList}
             </tbody>
+            {totalMenuPrice}
           </Table>
-          <Row>
-            <Link to="/overview">
+
+          <Row className="confirmButton1">
+            <Link to="/overview" className="confirmButton2">
               <button id="confirmButton">Confirm dinner</button>
             </Link>
           </Row>

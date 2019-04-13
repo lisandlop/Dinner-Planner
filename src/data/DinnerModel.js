@@ -30,12 +30,21 @@ class DinnerModel extends ObservableModel {
   setNumberOfGuests(num) {
     if (num >= 1) {
       this._numberOfGuests = num;
+      localStorage.setItem("numberOfGuests", this._numberOfGuests); 
       this.notifyObservers('numberOfGuests');
     }
   }
 
   getFullMenu() {
     return this._menu;
+  }
+
+  getTotalMenuPrice() {
+    var totalPrice = 0; 
+    for (var i = 0; i < this._menu.length; i++) {
+      totalPrice += this._menu[i].pricePerServing * this._numberOfGuests; 
+    }
+    return totalPrice; 
   }
 
   addDishToMenu(dish) {
