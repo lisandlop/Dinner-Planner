@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // we can import the model instance directly
 import modelInstance from "../data/DinnerModel";
 import "./Dishes.css";
+//import SearchField from "react-search-field";
 
 class Dishes extends Component {
   constructor(props) {
@@ -71,11 +72,31 @@ class Dishes extends Component {
     return (
       <div className="Dishes col-md-8">
         <h3>Find a dish</h3>
-        <h6>Search bar</h6>
-        <h6>Filter dropdown</h6>
+        
+        <form className = "searchform" onSubmit = {this.handleSubmit}>
+          <input id = "dishFilter" type = "text" className = "form-control col-sm-4" placeholder = "Search dish..."
+              defaultValue = {this.filter} onChange = {this.handleFilterChange}/>
+          <select id ="dishType" className = "form-control col-sm-3"
+              defaultValue = {this.type} onChange = {this.handleTypeChange}>
+            <option value ="all">All</option>
+            <option value = "appetizer">Appetizer</option>
+            <option value = "appetizer">Breakfast</option>
+            <option value = "appetizer">Main course</option>
+            <option value = "appetizer">Side dish</option>
+            <option value = "appetizer">Soup</option>
+            <option value = "appetizer">Salad</option>
+            <option value = "appetizer">Dessert</option>
+            <option value = "appetizer">Bread</option>
+            <option value = "appetizer">Sauce</option>
+            <option value = "appetizer">Beverage</option>
+            <option value = "appetizer">Drink</option>
+          </select>
+        </form>
+
         <Link to="/search">
           <button id="searchButton">Search</button>
         </Link>
+        <hr></hr>
         <div className="DishRow">{dishesList}</div>
       </div>
     );
