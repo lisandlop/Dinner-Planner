@@ -15,7 +15,6 @@ class SelectDish extends Component {
       <div className="row"> {/*gör en rad med sidebaren*/}     
     
       <div className="SelectDish">
-        <h2>This is the whole container</h2>
         {/*sökrutan*/}
 
         {/* We pass the model as property to the Sidebar component */}

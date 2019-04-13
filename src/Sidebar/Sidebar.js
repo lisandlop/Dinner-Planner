@@ -57,7 +57,7 @@ class Sidebar extends Component {
     var totalMenuPrice = (
       <thead>
           <tr>
-            <th colspan = "2" style={{textAlign: 'center'}}>Total menu price: {this.state.totalPrice === 0 ? '0 SEK' : this.state.totalPrice.toFixed(2) + 'SEK'}</th>
+            <th colSpan = "2" style={{textAlign: 'center'}}>Total menu price: {this.state.totalPrice === 0 ? '0 SEK' : this.state.totalPrice.toFixed(2) + 'SEK'}</th>
           </tr>
       </thead>
       )
