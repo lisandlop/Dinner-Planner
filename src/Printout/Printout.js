@@ -18,15 +18,21 @@ class Printout extends Component {
     render() {
 
         var printOutDish = this.state.menu.map((dish) =>
-            <Row key={dish.id}>
+        <div key={dish.id}>
+            <Row>
                 <Col>
+                {/* <Col xs="12" sm="4"> */}
                     <h3>{dish.title}</h3>
                     <img src={dish.image} />
                 </Col>
+                {/* <Col xs="12" sm="6"> */}
                 <Col>
                     <p>{dish.instructions}</p>
-                </Col>
+                </Col> 
             </Row>
+            <br/><br/>
+        </div>
+
         );
 
 
@@ -34,15 +40,6 @@ class Printout extends Component {
             <div className="Printout col-md-12">
                 <Row>
                     {printOutDish}
-                    {/* <Col>
-                        <p>Image</p>
-                    </Col>
-                    <Col>
-                        <p>Title</p>
-                    </Col>
-                    <Col>
-                        <p>Preparation</p>
-                    </Col> */}
                 </Row>
             </div>
         );

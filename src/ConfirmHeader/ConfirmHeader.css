@@ -9,6 +9,7 @@
     }
 
     #backEditDinnerButton {
-        align-content: right; 
+        display: flex;
+        align-items: right;
         background-color: orange; 
     }

@@ -18,33 +18,37 @@ class Overview extends Component {
     }
 
     render() {
+
+        let guestNumber = this.state.numberOfGuests; 
+
         var overviewDishList = this.state.menu.map((dish) =>
                 <Card key={dish.id} style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={dish.image} />
                     <Card.Body>
                         <Card.Title>{dish.title}</Card.Title>
-                        <Card.Text>Dish price SEK</Card.Text>
+                        <Card.Text>Total dish cost: {(dish.pricePerServing * guestNumber)} SEK</Card.Text>
                     </Card.Body>
                 </Card>
         );
 
         var totalMenuPrice = (
             <h6>
-                Total menu price: {this.state.totalPrice === 0 ? '0 SEK' : this.state.totalPrice.toFixed(2) + 'SEK'}
+                Total menu price: {this.state.totalPrice === 0 ? '0 SEK' : this.state.totalPrice.toFixed(2) + ' SEK'}
             </h6>
         )
 
         return (
             <div className="Overview col-md-12">
-                <Row>
+                <Row id="overviewCards">
                     {overviewDishList}
                 </Row>
-                <Row>
+                <Row id="overviewPrice">
                     {totalMenuPrice}
                 </Row>
                 <Link to="/printout">
                     <button id="printButton">Print full recipe</button>
                 </Link>
+                <br/><br/>
             </div>
         );
     }

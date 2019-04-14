@@ -26,7 +26,7 @@ class ConfirmHeader extends Component {
                     </Col>
                     <Col >
                         <Link to="/search">
-                            <button stylle={{textAlign: 'center'}}id="backEditDinnerButton">Go back and edit dinner</button>
+                            <button id="backEditDinnerButton">Go back and edit dinner</button>
                         </Link>
                     </Col>  
                 </Row>
