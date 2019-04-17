@@ -10,6 +10,7 @@ import "./Details.css";
 class Details extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
         numberOfGuests: this.props.model.getNumberOfGuests(),
         dish: null,
@@ -27,6 +28,11 @@ class Details extends Component {
                 status: "LOADED"
             })
         })
+        this.props.model.addObserver(this);
+    }
+
+    componentWillUnmount() {
+        this.props.model.removeObserver(this);
     }
 
     update() {
@@ -34,6 +40,10 @@ class Details extends Component {
             numberOfGuests: this.props.model.getNumberOfGuests()
         }); 
     }
+
+    onNumberOfGuestsChanged = e => {
+        this.props.model.setNumberOfGuests(e.target.value);
+    };
 
     render() {
 
@@ -85,7 +95,7 @@ class Details extends Component {
                     </Col>
 
                     <Col className="ingredientCol">
-                        <h6>Ingredients for {guestNumber} number of people:</h6>
+                        <h6>Ingredients for {this.state.numberOfGuests} number of people:</h6>
                         <table className="table">
                             <tbody>{ingredientList}</tbody>
                         </table>
