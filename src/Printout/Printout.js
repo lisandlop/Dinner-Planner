@@ -22,11 +22,11 @@ class Printout extends Component {
             <Row>
                 {/* <Col className="col-md-6"> */}
                 {/* <Col> */}
-                <Col xs="12" sm="4">
+                <Col xs="12" md="4">
                     <h3>{dish.title}</h3>
                     <img className="printOutImg" src={dish.image} alt={dish.title}/>
                 </Col>
-                <Col xs="12" sm="7">
+                <Col xs="12" md="7">
                 {/* <Col className="col-md-6"> */}
                 {/* <Col> */}
                     <p>{dish.instructions}</p>

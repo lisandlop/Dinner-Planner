@@ -4,5 +4,6 @@
 }
 
     .printOutImg {
-        width: 100%
+        width: 90%; 
+        /* size: auto;  */
     }
