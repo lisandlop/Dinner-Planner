@@ -63,7 +63,7 @@ class Sidebar extends Component {
       )
 
     return (
-      <div className="Sidebar col-md-4">
+      <div className="Sidebar col-md-3">
 
         <Col id="SidebarColumn">
           <Row>
@@ -76,7 +76,7 @@ class Sidebar extends Component {
               <input
                 type="number"
                 value={this.state.numberOfGuests}
-                onChange={this.onNumberOfGuestsChanged}
+                onChange={this.onNumberOfGuestsChanged} id="form"
               />
               <br />
             </p>

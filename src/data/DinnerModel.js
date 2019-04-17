@@ -72,9 +72,6 @@ class DinnerModel extends ObservableModel {
     }
   }
 
-  
-
-
   // API methods
 
   /**

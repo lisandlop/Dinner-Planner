@@ -8,6 +8,7 @@
 
     #SidebarColumn {
         padding-left: 2em; 
+        
     }
 
     .confirmButton1 {
@@ -22,4 +23,9 @@
         align-items: center; 
         background-color: orange; 
         padding: 0.5em; 
+    }
+
+    #form {
+        width: 100%;
+        margin-left: 10px;
     }

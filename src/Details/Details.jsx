@@ -72,7 +72,7 @@ class Details extends Component {
         }
 
         return (
-            <div className="Details col-md-8" >
+            <div className="Details col-md-9" >
                 <Row>
                     <Col>
                         {dishTitle}
