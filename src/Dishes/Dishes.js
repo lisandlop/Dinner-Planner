@@ -72,7 +72,7 @@ class Dishes extends Component {
     }
 
     return (
-      <div className="Dishes col-md-8">
+      <div className="Dishes col-md-9">
         <h3>Find a dish</h3>
   
           <form className = "searchform" onSubmit = {this.handleSubmit}>

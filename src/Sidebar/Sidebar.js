@@ -50,20 +50,20 @@ class Sidebar extends Component {
     var menuList = this.state.menu.map((dish) =>
       <tr key={dish.id}>
         <td>{dish.title}</td>
-        <td style={{textAlign: 'right'}}>{(dish.pricePerServing * this.state.numberOfGuests).toFixed(2)}</td>
+        <td style={{textAlign: 'right'}}>{(dish.pricePerServing * this.state.numberOfGuests).toFixed(1)} SEK</td>
       </tr>
     )
 
     var totalMenuPrice = (
       <thead>
           <tr>
-            <th colSpan = "2" style={{textAlign: 'center'}}>Total menu price: {this.state.totalPrice === 0 ? '0 SEK' : this.state.totalPrice.toFixed(2) + 'SEK'}</th>
+            <th colSpan = "2" style={{textAlign: 'center'}}>Total menu price: {this.state.totalPrice === 0 ? '0 SEK' : this.state.totalPrice.toFixed(1) + ' SEK'}</th>
           </tr>
       </thead>
       )
 
     return (
-      <div className="Sidebar col-md-4">
+      <div className="Sidebar col-md-3">
 
         <Col id="SidebarColumn">
           <Row className="sidebarText">

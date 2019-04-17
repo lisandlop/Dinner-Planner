@@ -26,14 +26,14 @@ class Overview extends Component {
                     <Card.Img variant="top" src={dish.image} />
                     <Card.Body>
                         <Card.Title>{dish.title}</Card.Title>
-                        <Card.Text>Total dish cost: {(dish.pricePerServing * guestNumber)} SEK</Card.Text>
+                        <Card.Text>Total dish cost: {(dish.pricePerServing * guestNumber).toFixed(1)} SEK</Card.Text>
                     </Card.Body>
                 </Card>
         );
 
         var totalMenuPrice = (
             <h6>
-                Total menu price: {this.state.totalPrice === 0 ? '0 SEK' : this.state.totalPrice.toFixed(2) + ' SEK'}
+                Total menu price: {this.state.totalPrice === 0 ? '0 SEK' : this.state.totalPrice.toFixed(1) + ' SEK'}
             </h6>
         )
 

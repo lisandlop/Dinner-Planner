@@ -21,14 +21,14 @@ class Printout extends Component {
         <div key={dish.id}>
             <Row>
                 {/* <Col className="col-md-6"> */}
-                <Col>
-                {/* <Col xs="12" sm="4"> */}
+                {/* <Col> */}
+                <Col xs="12" sm="4">
                     <h3>{dish.title}</h3>
-                    <img src={dish.image} alt={dish.title}/>
+                    <img className="printOutImg" src={dish.image} alt={dish.title}/>
                 </Col>
-                {/* <Col xs="12" sm="6"> */}
+                <Col xs="12" sm="7">
                 {/* <Col className="col-md-6"> */}
-                <Col>
+                {/* <Col> */}
                     <p>{dish.instructions}</p>
                 </Col> 
             </Row>

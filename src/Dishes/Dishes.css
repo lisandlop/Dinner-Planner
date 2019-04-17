@@ -39,6 +39,7 @@
         display: flex;
         flex-flow: row wrap; 
         align-content: stretch; 
+        justify-content: center; 
 
     }
 

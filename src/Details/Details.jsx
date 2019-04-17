@@ -68,13 +68,13 @@ class Details extends Component {
 
                 ingredientList = this.state.dish["extendedIngredients"].map((ingredient) =>
                     <tr key={ingredient.id}>
-                        <td>{(ingredient.amount).toFixed(1)*guestNumber + ' ' + ingredient.unit}</td>
+                        <td>{(ingredient.amount).toFixed(2)*guestNumber + ' ' + ingredient.unit}</td>
                         <td>{ingredient.name}</td>
                         <td>SEK</td>
                         <td style={{textAlign: 'right'}}>{(1).toFixed(2)*guestNumber}</td>
                     </tr>);
 
-                dishPrice = <h6 style={{textAlign: 'center'}}>Total cost: {(this.state.dish.pricePerServing * guestNumber)} SEK</h6>
+                dishPrice = <h6 style={{textAlign: 'center'}}>Total cost: {(this.state.dish.pricePerServing * guestNumber).toFixed(1)} SEK</h6>
 
                 addDish = <button id="addToMenuButton" onClick={() => 
                     this.props.model.addDishToMenu(this.state.dish)}>Add to menu</button>
@@ -82,7 +82,7 @@ class Details extends Component {
         }
 
         return (
-            <div className="Details col-md-8" >
+            <div className="Details col-md-9" >
                 <Row>
                     <Col>
                         {dishTitle}
