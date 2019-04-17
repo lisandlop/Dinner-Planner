@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import modelInstance from "../data/DinnerModel";
+// import modelInstance from "../data/DinnerModel";
 import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 import { Link } from "react-router-dom";
@@ -22,7 +22,7 @@ class Overview extends Component {
         let guestNumber = this.state.numberOfGuests; 
 
         var overviewDishList = this.state.menu.map((dish) =>
-                <Card key={dish.id} style={{ width: '18rem' }}>
+                <Card id="cardStyle" key={dish.id} style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={dish.image} />
                     <Card.Body>
                         <Card.Title>{dish.title}</Card.Title>
@@ -48,7 +48,7 @@ class Overview extends Component {
                 <Link to="/printout">
                     <button id="printButton">Print full recipe</button>
                 </Link>
-                <br/><br/>
+                <br/><br/><br/><br/>
             </div>
         );
     }

@@ -5,6 +5,14 @@
 
     #printButton {
         background-color: orange; 
+        padding: 5px; 
+        padding-left: 8px;
+        padding-right: 8px; 
+        border-radius: 8px; 
+    }
+
+    #cardStyle {
+        margin: 1em; 
     }
 
     #overviewCards, #overviewPrice {

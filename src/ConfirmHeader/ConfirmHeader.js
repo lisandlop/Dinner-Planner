@@ -24,7 +24,7 @@ class ConfirmHeader extends Component {
                             My Dinner: {this.state.numberOfGuests} people 
                         </h2>    
                     </Col>
-                    <Col >
+                    <Col className="goBackCol">
                         <Link to="/search">
                             <button id="backEditDinnerButton">Go back and edit dinner</button>
                         </Link>

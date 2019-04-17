@@ -66,11 +66,11 @@ class Sidebar extends Component {
       <div className="Sidebar col-md-4">
 
         <Col id="SidebarColumn">
-          <Row>
+          <Row className="sidebarText">
             <h3>My Dinner</h3>
           </Row>
 
-          <Row>
+          <Row className="sidebarText">
             <p>
               People:
               <input
@@ -82,7 +82,7 @@ class Sidebar extends Component {
             </p>
           </Row>
 
-          <Row>
+          <Row className="sidebarText">
             <p>
               Total number of guests: {this.state.numberOfGuests}
             </p>

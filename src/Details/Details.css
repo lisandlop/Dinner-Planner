@@ -2,8 +2,23 @@
     padding-top: 1em; 
 }
 
+    .ingredientCol {
+        margin-right: 2em; 
+    }
+
+    #addMenu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2em; 
+    }
+
     #backToSearchButton, #addToMenuButton {
         background-color: orange; 
+        padding: 0.5em; 
+        padding-left: 8px;
+        padding-right: 8px; 
+        border-radius: 8px; 
     }
     .DishImage {
         width: 100%;

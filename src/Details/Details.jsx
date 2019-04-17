@@ -53,7 +53,7 @@ class Details extends Component {
             case "LOADED":
 
                 dishTitle = <h3>{this.state.dish.title}</h3>;
-                dishImage = <img className="DishImage" src={this.state.dish.image} />
+                dishImage = <img className="DishImage" src={this.state.dish.image} alt={this.state.dish.title} />
                 dishInstructions = <p>{this.state.dish.instructions}</p>
 
                 ingredientList = this.state.dish["extendedIngredients"].map((ingredient) =>
@@ -79,18 +79,18 @@ class Details extends Component {
                         {/* this.props.title */}
                         {dishImage}
                         {dishInstructions}
-                        <Link to="/search">
+                        <Link to="/search" id="goBackSearch">
                             <button id="backToSearchButton">Back to search</button>
                         </Link>
                     </Col>
 
-                    <Col>
+                    <Col className="ingredientCol">
                         <h6>Ingredients for {guestNumber} number of people:</h6>
                         <table className="table">
                             <tbody>{ingredientList}</tbody>
                         </table>
                         {dishPrice}
-                        <Link to="/search">
+                        <Link to="/search" id="addMenu">
                             {addDish}
                         </Link>
                     </Col>

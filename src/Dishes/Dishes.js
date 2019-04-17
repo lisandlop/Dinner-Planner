@@ -56,7 +56,7 @@ class Dishes extends Component {
           <Link key={dish.id} to={"/details/" + dish.id} style={{ textDecoration: 'none' }}>
             <div className="SearchDishBox">
               <div className="SearchImage">
-                <img id="DishImage" src={"https://spoonacular.com/recipeImages/" + dish.image} />
+                <img id="DishImage" src={"https://spoonacular.com/recipeImages/" + dish.image} alt={dish.title} />
               </div>
               <div className="SearchTitle">
                 {dish.title}
