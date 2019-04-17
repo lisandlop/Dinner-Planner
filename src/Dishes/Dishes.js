@@ -6,6 +6,7 @@ import modelInstance from "../data/DinnerModel";
 import "./Dishes.css";
 //import SearchField from "react-search-field";
 
+
 class Dishes extends Component {
   constructor(props) {
     super(props);
@@ -36,6 +37,7 @@ class Dishes extends Component {
         });
       });
   }
+
 
   render() {
     let dishesList = null;
@@ -68,7 +70,6 @@ class Dishes extends Component {
         dishesList = <b>Failed to load data, please try again</b>;
         break;
     }
-
 
     return (
       <div className="Dishes col-md-8">
@@ -103,6 +104,7 @@ class Dishes extends Component {
       </div>
     
     );
+    
   }
 }
 
