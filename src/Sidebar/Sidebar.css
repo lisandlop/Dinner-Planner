@@ -11,18 +11,27 @@
         
     }
 
+    .sidebarText {
+        padding-left: 1em; 
+    }
+
     .confirmButton1 {
-        align-items: center; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
     }
 
     .confirmButton2 {
-        align-items: center; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     #confirmButton {
-        align-items: center; 
         background-color: orange; 
         padding: 0.5em; 
+
     }
 
     #form {

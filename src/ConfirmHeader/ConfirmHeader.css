@@ -8,8 +8,15 @@
         padding-left: 1em; 
     }
 
-    #backEditDinnerButton {
+    .goBackCol {
         display: flex;
-        align-items: right;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    #backEditDinnerButton {
         background-color: orange; 
+        margin-right: 3em; 
+        padding: 8px; 
+        border-radius: 8px; 
     }

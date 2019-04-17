@@ -20,13 +20,15 @@ class Printout extends Component {
         var printOutDish = this.state.menu.map((dish) =>
         <div key={dish.id}>
             <Row>
-                <Col>
-                {/* <Col xs="12" sm="4"> */}
+                {/* <Col className="col-md-6"> */}
+                {/* <Col> */}
+                <Col xs="12" sm="4">
                     <h3>{dish.title}</h3>
-                    <img src={dish.image} />
+                    <img className="printOutImg" src={dish.image} alt={dish.title}/>
                 </Col>
-                {/* <Col xs="12" sm="6"> */}
-                <Col>
+                <Col xs="12" sm="7">
+                {/* <Col className="col-md-6"> */}
+                {/* <Col> */}
                     <p>{dish.instructions}</p>
                 </Col> 
             </Row>

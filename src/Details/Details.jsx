@@ -10,6 +10,7 @@ import "./Details.css";
 class Details extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
         numberOfGuests: this.props.model.getNumberOfGuests(),
         dish: null,
@@ -27,6 +28,11 @@ class Details extends Component {
                 status: "LOADED"
             })
         })
+        this.props.model.addObserver(this);
+    }
+
+    componentWillUnmount() {
+        this.props.model.removeObserver(this);
     }
 
     update() {
@@ -34,6 +40,10 @@ class Details extends Component {
             numberOfGuests: this.props.model.getNumberOfGuests()
         }); 
     }
+
+    onNumberOfGuestsChanged = e => {
+        this.props.model.setNumberOfGuests(e.target.value);
+    };
 
     render() {
 
@@ -53,18 +63,18 @@ class Details extends Component {
             case "LOADED":
 
                 dishTitle = <h3>{this.state.dish.title}</h3>;
-                dishImage = <img className="DishImage" src={this.state.dish.image} />
+                dishImage = <img className="DishImage" src={this.state.dish.image} alt={this.state.dish.title} />
                 dishInstructions = <p>{this.state.dish.instructions}</p>
 
                 ingredientList = this.state.dish["extendedIngredients"].map((ingredient) =>
                     <tr key={ingredient.id}>
-                        <td>{(ingredient.amount).toFixed(1)*guestNumber + ' ' + ingredient.unit}</td>
+                        <td>{(ingredient.amount).toFixed(2)*guestNumber + ' ' + ingredient.unit}</td>
                         <td>{ingredient.name}</td>
                         <td>SEK</td>
                         <td style={{textAlign: 'right'}}>{(1).toFixed(2)*guestNumber}</td>
                     </tr>);
 
-                dishPrice = <h6 style={{textAlign: 'center'}}>Total cost: {(this.state.dish.pricePerServing * guestNumber)} SEK</h6>
+                dishPrice = <h6 style={{textAlign: 'center'}}>Total cost: {(this.state.dish.pricePerServing * guestNumber).toFixed(1)} SEK</h6>
 
                 addDish = <button id="addToMenuButton" onClick={() => 
                     this.props.model.addDishToMenu(this.state.dish)}>Add to menu</button>
@@ -79,18 +89,18 @@ class Details extends Component {
                         {/* this.props.title */}
                         {dishImage}
                         {dishInstructions}
-                        <Link to="/search">
+                        <Link to="/search" id="goBackSearch">
                             <button id="backToSearchButton">Back to search</button>
                         </Link>
                     </Col>
 
-                    <Col>
-                        <h6>Ingredients for {guestNumber} number of people:</h6>
+                    <Col className="ingredientCol">
+                        <h6>Ingredients for {this.state.numberOfGuests} number of people:</h6>
                         <table className="table">
                             <tbody>{ingredientList}</tbody>
                         </table>
                         {dishPrice}
-                        <Link to="/search">
+                        <Link to="/search" id="addMenu">
                             {addDish}
                         </Link>
                     </Col>
