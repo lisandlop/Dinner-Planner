@@ -38,3 +38,24 @@
         width: 100%;
         margin-left: 1px;
     }
+
+    .DeleteButton {
+        padding-top: 5px;
+        padding-bottom:5px;
+        border-radius: 50px 50px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        background-color: transparent;
+        border-color: transparent;
+      }
+    
+      .DeleteButton:hover {
+        background-color: grey;
+      }
+    
+      .fa fa-trash {
+        width: 150%;
+        height: 150%;
+    
+      }

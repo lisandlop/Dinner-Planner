@@ -4,6 +4,11 @@ import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
+import Button from 'react-bootstrap/Button';
+import removeDishFromMenu from "../data/DinnerModel";
+//import Modal from 'react-bootstrap/Modal';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 class Sidebar extends Component {
   constructor(props) {
@@ -45,13 +50,25 @@ class Sidebar extends Component {
     this.props.model.setNumberOfGuests(e.target.value);
   };
 
+  /*deleteDish = (e, menu) => {
+    this.menuList.splice(menu, 1);
+    if (this.menu.length === 0) this.menuList.push({ /*question: '', answer: '', falseOptions: [], track: '' *//*});
+    document.getElementById('sidebarText').reset();
+    this.setState({ reRender: true });
+  }*/
+
   render() {
 
     var menuList = this.state.menu.map((dish) =>
       <tr key={dish.id}>
         <td>{dish.title}</td>
         <td style={{textAlign: 'right'}}>{(dish.pricePerServing * this.state.numberOfGuests).toFixed(1)} SEK</td>
+        <td>
+          <button className="DeleteButton" onClick={() =>
+            this.props.modelInstance.removeDishFromMenu(dish.id)}>X</button>
+        </td>
       </tr>
+
     )
 
     var totalMenuPrice = (
@@ -95,6 +112,12 @@ class Sidebar extends Component {
                 <th style={{textAlign: 'right'}}>Cost</th>
               </tr>
             </thead>
+                {/*<Button variant="primary" size="lg" className="AddButton" onClick={this.deleteDish} style={{ width: '50%', position: 'left'}}>
+                  <span>x</span>
+                 </Button>*/}
+          
+                
+
             <tbody>
               {menuList}
             </tbody>
