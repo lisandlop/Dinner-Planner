@@ -100,12 +100,12 @@ class Dishes extends Component {
       });
   };
 
-  handleFilterChange(e) {
+ /* handleFilterChange(e) {
       var filter = modelInstance.getFilter();
       this.setState({
         filter: filter
       });
-    }
+  }*/
   
 
   render() {
