@@ -13,6 +13,14 @@ class DinnerModel extends ObservableModel {
     this._numberOfGuests = 4;
     this.getNumberOfGuests();
     this._menu = []; 
+
+    if (!isNaN(parseInt(localStorage.getItem("numberOfGuests"), 10))) {
+      this._numberOfGuests = parseInt(localStorage.getItem("numberOfGuests"), 10);
+    }
+    if (JSON.parse(localStorage.getItem("selectedMenu"))) {
+      this._selectedMenu = JSON.parse(localStorage.getItem("selectedMenu"));
+    }
+
   }
 
   /**
@@ -78,8 +86,8 @@ class DinnerModel extends ObservableModel {
    * Do an API call to the search API endpoint.
    * @returns {Promise<any>}
    */
-  getAllDishes() {
-    const url = `${BASE_URL}/recipes/search`;
+  getAllDishes(type, filter) {
+    const url = `${BASE_URL}/recipes/search?type=${type}&query=${filter}`;
     return fetch(url, httpOptions).then(this.processResponse);
   }
 
