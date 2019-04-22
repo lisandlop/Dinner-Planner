@@ -52,7 +52,7 @@ class Details extends Component {
         let dishInstructions = null; 
         let ingredientList = null;
         let addDish = null; 
-        let dishPrice = null; // ! 
+        let dishPrice = null; 
 
         let guestNumber = this.state.numberOfGuests; 
 
@@ -68,7 +68,7 @@ class Details extends Component {
 
                 ingredientList = this.state.dish["extendedIngredients"].map((ingredient) =>
                     <tr key={ingredient.id}>
-                        <td>{(ingredient.amount).toFixed(1)*guestNumber + ' ' + ingredient.unit}</td>
+                        <td>{(ingredient.amount).toFixed(2)*guestNumber + ' ' + ingredient.unit}</td>
                         <td>{ingredient.name}</td>
                         <td>SEK</td>
                         <td style={{textAlign: 'right'}}>{(1).toFixed(2)*guestNumber}</td>

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // import Col from 'react-bootstrap/Col';
 // import Button from 'react-bootstrap/Button';
 
-import modelInstance from "../data/DinnerModel";
+// import modelInstance from "../data/DinnerModel";
 
 import "./Dishes.css";
 //import SearchField from "react-search-field";
@@ -15,8 +15,6 @@ import "./Dishes.css";
 class Dishes extends Component {
   constructor(props) {
     super(props);
-    // We create the state to store the various statuses
-    // e.g. API data loading or error
 
     let url = new URL(document.URL);
 
@@ -35,34 +33,16 @@ class Dishes extends Component {
   componentDidMount() {
     this.searchFunction(); 
 
-    // modelInstance
-    //   .getAllDishes()
-    //   .then(dishes => {
-    //     this.setState({
-    //       status: "LOADED",
-    //       dishes: dishes.results
-    //     });
-    //   })
-    //   .catch(() => {
-    //     this.setState({
-    //       status: "ERROR"
-    //     });
-    //   });
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('componentDidUpdate')
     if (prevState.type !== this.state.type || prevState.filter !== this.state.filter) {
-      console.log('componentDidUpdate -> Go Time!')
       this.searchFunction();
     }
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('getDerivedState')
     if(nextProps.type !== prevState.type || nextProps.filter !== prevState.filter) {
-      console.log('getDerivedState -> Go Time!')
-      console.log(prevState)
       return {status: "LOADING", type: nextProps.type, filter: nextProps.filter};
     }
     return null;
@@ -81,16 +61,16 @@ class Dishes extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-      //Update URL if new query
 	    if (this.updated) {
         let url = 'search?'
         
-			//Add params with values, ignore those without
-			if (this.type && this.type !== 'all') { url += 'type=' + this.type }
-			if (this.type && this.type !== 'all' && this.filter) url += '&filter=' + this.filter
-			else if (this.filter) url += 'filter=' + this.filter
+			if (this.type && this.type !== 'all') { 
+        url += 'type=' + this.type }
+      if (this.type && this.type !== 'all' && this.filter) {
+        url += '&filter=' + this.filter }
+			else if (this.filter) { 
+        url += 'filter=' + this.filter }
 
-			//Push new URL and re-render page
 			window.history.pushState({}, '', url)
 			this.updated = false;
 			this.setState({updated: true})
