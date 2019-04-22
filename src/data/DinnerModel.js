@@ -17,8 +17,8 @@ class DinnerModel extends ObservableModel {
     if (!isNaN(parseInt(localStorage.getItem("numberOfGuests"), 10))) {
       this._numberOfGuests = parseInt(localStorage.getItem("numberOfGuests"), 10);
     }
-    if (JSON.parse(localStorage.getItem("selectedMenu"))) {
-      this._selectedMenu = JSON.parse(localStorage.getItem("selectedMenu"));
+    if (JSON.parse(localStorage.getItem("menu"))) {
+      this._selectedMenu = JSON.parse(localStorage.getItem("menu"));
     }
 
   }
@@ -75,7 +75,7 @@ class DinnerModel extends ObservableModel {
     }
     if (index > -1) { this._menu.splice(index, 1); }
     if (!muted) {
-      localStorage.setItem("selectedMenu", JSON.stringify(this._menu));
+      localStorage.setItem("menu", JSON.stringify(this._menu));
       this.notifyObservers();
     }
   }
