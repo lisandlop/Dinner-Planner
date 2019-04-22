@@ -61,16 +61,16 @@ class Dishes extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-      //Update URL if new query
 	    if (this.updated) {
         let url = 'search?'
         
-			//Add params with values, ignore those without
-			if (this.type && this.type !== 'all') { url += 'type=' + this.type }
-			if (this.type && this.type !== 'all' && this.filter) url += '&filter=' + this.filter
-			else if (this.filter) url += 'filter=' + this.filter
+			if (this.type && this.type !== 'all') { 
+        url += 'type=' + this.type }
+      if (this.type && this.type !== 'all' && this.filter) {
+        url += '&filter=' + this.filter }
+			else if (this.filter) { 
+        url += 'filter=' + this.filter }
 
-			//Push new URL and re-render page
 			window.history.pushState({}, '', url)
 			this.updated = false;
 			this.setState({updated: true})
