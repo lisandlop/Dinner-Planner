@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
 //import modelInstance from "../data/DinnerModel";
 //import Modal from 'react-bootstrap/Modal';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
