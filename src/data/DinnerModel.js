@@ -18,7 +18,7 @@ class DinnerModel extends ObservableModel {
       this._numberOfGuests = parseInt(localStorage.getItem("numberOfGuests"), 10);
     }
     if (JSON.parse(localStorage.getItem("menu"))) {
-      this._selectedMenu = JSON.parse(localStorage.getItem("menu"));
+      this._menu = JSON.parse(localStorage.getItem("menu"));
     }
 
   }
