@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
 import Button from 'react-bootstrap/Button';
-import removeDishFromMenu from "../data/DinnerModel";
+import modelInstance from "../data/DinnerModel";
 //import Modal from 'react-bootstrap/Modal';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -65,7 +65,7 @@ class Sidebar extends Component {
         <td style={{textAlign: 'right'}}>{(dish.pricePerServing * this.state.numberOfGuests).toFixed(1)} SEK</td>
         <td>
           <button className="DeleteButton" onClick={() =>
-            this.props.modelInstance.removeDishFromMenu(dish.id)}>X</button>
+            this.props.model.removeDishFromMenu(dish.id)}>X</button>
         </td>
       </tr>
 
